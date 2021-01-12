@@ -20,4 +20,11 @@ class One_use(Fulei):
     #     try:
 
     def send_IdCard(self):
-        print('hah')
+        ele = ('id','com.didichuxing.internalapp:id/btn_function') # 点击更多"+"号
+        self.click(ele)
+        ele2 =('xpath','//android.widget.ImageView[@content-desc="名片"]')# 点击名片
+        self.click(ele2)
+        ele3 =('xpath','/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]')
+        self.click(ele3)# 在最近联系人中选择第一位
+        ele4 =('id',"com.didichuxing.internalapp:id/item_confirm")
+        self.click(ele4) # 点击确定发送
