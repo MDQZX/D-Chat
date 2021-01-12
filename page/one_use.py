@@ -18,3 +18,6 @@ class One_use(Fulei):
         self.click(ele2)  # 点击每个表情包的第二个
     # def send_Voicemessage(self):
     #     try:
+
+    def send_IdCard(self):
+        print('hah')
