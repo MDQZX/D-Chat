@@ -39,7 +39,7 @@ def test_VoiceMessage():
     try:
         print("发送语音中...\n")
         One_use(driver).send_VoiceMessage()
-    except:
+    except Exception as i:
         print("发送失败请检查下\n",i)
 if __name__ == '__main__':
     pytest.main()
