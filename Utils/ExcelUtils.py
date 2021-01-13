@@ -23,7 +23,7 @@ class Excel():
                     else:
                         dict[firstValue[j]] = othersValue[j]
                 list.append(dict)
-            print(list)
+                print(list)
             return list
     def writeValue(self):
         with xlrd.open_workbook(self.file) as book:
@@ -32,3 +32,6 @@ class Excel():
             copy_table.write(1,2,"haha")
             copy_book.save(self.file)
 
+
+if __name__ == '__main__':
+    Excel().getAllcase()

@@ -2,10 +2,12 @@ from appium import webdriver
 
 from time import sleep
 
+from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.wait import WebDriverWait
 
+from base.parameter import driver
 from data.data import screenshot_url
 
 
@@ -21,10 +23,10 @@ class Fulei:
         if isinstance(ele, tuple):
             print("定位元素中：方式:{0},内容:{1}".format(ele[0], ele[1]))
             try:
-                ceshi = WebDriverWait(self.driver, 10, 0.5).until(EC.presence_of_element_located(ele))
+                wait = WebDriverWait(self.driver, 10, 0.5).until(EC.presence_of_element_located(ele))
             except:
                 raise eleNotFindEroor("元素定位超时了")
-            return ceshi
+            return wait
         else:
             raise ("元素定位失败格式：（'id','value')")
 
@@ -54,3 +56,9 @@ class Fulei:
             print('截图成功')
         except Exception as i:
             print("截图失败，报错了快去检查下", i)
+
+    def Long_press(self,ele,x,y):  # 根据坐标发送语音
+        ac = TouchAction(driver)
+        self.find(ele)  # 显示等待
+        ac.long_press(x=x, y=y).wait(1000).perform()
+

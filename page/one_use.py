@@ -16,8 +16,13 @@ class One_use(Fulei):
                 '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.ImageView')
         sleep(1.5)
         self.click(ele2)  # 点击每个表情包的第二个
-    # def send_Voicemessage(self):
-    #     try:
+    def send_VoiceMessage(self):
+        ele = ('id','com.didichuxing.internalapp:id/ib_input_switch')
+        self.click(ele) # 点击会话中语音的button
+        ele2 = ('xpath',
+               '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button')  # 长按操作
+        self.Long_press(ele=ele2,x=846,y=1923) # 长按 发送语音  X:x轴  Y：Y轴
+
 
     def send_IdCard(self):
         ele = ('id','com.didichuxing.internalapp:id/btn_function') # 点击更多"+"号
