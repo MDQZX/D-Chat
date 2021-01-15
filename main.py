@@ -29,17 +29,22 @@ def test_stiker(data):  # 发送各个模块的表情包
     ele = (data['sticker_type'], data['sticker'])
     One_use(driver).send_expression(ele)
 
+
 def test_IdCard():
     try:
         print("发送名片中...\n")
         One_use(driver).send_IdCard()
     except Exception as i:
-        print("发送名片失败，请检查！",i)
+        print("发送名片失败，请检查！", i)
+
+
 def test_VoiceMessage():
     try:
         print("发送语音中...\n")
         One_use(driver).send_VoiceMessage()
     except Exception as i:
-        print("发送失败请检查下\n",i)
+        print("发送失败请检查下\n", i)
+
+
 if __name__ == '__main__':
     pytest.main()

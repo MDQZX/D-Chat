@@ -23,7 +23,7 @@ class Fulei:
         if isinstance(ele, tuple):
             print("定位元素中：方式:{0},内容:{1}".format(ele[0], ele[1]))
             try:
-                wait = WebDriverWait(self.driver, 10, 0.5).until(EC.presence_of_element_located(ele))
+                wait = WebDriverWait(self.driver, 20, 1).until(EC.presence_of_element_located(ele))
             except:
                 raise eleNotFindEroor("元素定位超时了")
             return wait

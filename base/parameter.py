@@ -4,8 +4,8 @@
 from appium import webdriver
 caps = {}
 caps["platformName"] = "Android"
-caps["deviceName"] = "emulator-5554"  # adb 连接手机设备名
-caps["platfromVersion"] = "6.0.1"  # Android版本
+caps["deviceName"] = "192.168.56.104:5555"  # adb 连接手机设备名
+caps["platfromVersion"] = "6.0"  # Android版本
 caps["appPackage"] = "com.didichuxing.internalapp" # 包名
 caps["appActivity"] = "com.didi.comlab.c.main.MainActivity"
 caps["autoGrantPermissions"] = True

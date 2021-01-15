@@ -1,3 +1,5 @@
+from time import sleep
+
 import pytest
 
 from base.Fulei import Fulei
@@ -17,5 +19,7 @@ def search_all():
     ele3 = ("xpath",
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
     self.click(ele3)  # 点击进入单人会话页面
-    ele = ('id', 'com.didichuxing.internalapp:id/btn_emoticon')
-    self.click(ele)  # 点击表情icon
+    ele4 = ("id", "com.didichuxing.internalapp:id/btn_emoticon")
+    self.click(ele4)  # 点击表情icon
+
+
