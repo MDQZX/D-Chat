@@ -1,5 +1,6 @@
 from time import sleep
 
+from Utils.ExcelUtils import Excel
 from base.Fulei import Fulei
 from base.parameter import driver
 
@@ -7,9 +8,9 @@ from base.parameter import driver
 class One_use(Fulei):
     def send_message(self, value):  # 单聊发送文本消息
         ele4 = ("id", "com.didichuxing.internalapp:id/et_messages_input")
-        sleep(2)# 输入得等两秒，要不太快
+        sleep(2)  # 输入得等两秒，要不太快
         self.send(ele4, value)  # 输入文本消息发送
-        ele5 = ('id', 'com.didichuxing.internalapp:id/btn_send')
+        ele5 = ('id', "com.didichuxing.internalapp:id/btn_send")
         self.click(ele5)
 
     def send_expression(self, data):  # 单聊发送表情
@@ -24,8 +25,7 @@ class One_use(Fulei):
         self.click(ele)  # 点击会话中语音的button
         ele2 = ('xpath',
                 '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.Button')  # 长按操作
-        self.Long_press(ele=ele2, x=846, y=1923)  # 长按 发送语音  X:x轴  Y：Y轴
-
+        self.Long_press(ele=ele2, x=640, y=2374, time=2000)  # 长按 发送语音  X:x轴  Y：Y轴
 
     def send_IdCard(self):
         ele = ('id', 'com.didichuxing.internalapp:id/btn_function')  # 点击更多"+"号

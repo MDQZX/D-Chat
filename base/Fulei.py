@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.wait import WebDriverWait
 
+from Utils.ExcelUtils import Excel
 from base.parameter import driver
 from data.data import screenshot_url
 
@@ -57,8 +58,7 @@ class Fulei:
         except Exception as i:
             print("截图失败，报错了快去检查下", i)
 
-    def Long_press(self,ele,x,y):  # 根据坐标发送语音
+    def Long_press(self, ele, x, y, time):  # x，y：根据坐标发送语音  time:长按时间
         ac = TouchAction(driver)
         self.find(ele)  # 显示等待
-        ac.long_press(x=x, y=y).wait(1000).perform()
-
+        ac.long_press(x=x, y=y).wait(time).perform()

@@ -21,5 +21,3 @@ def search_all():
     self.click(ele3)  # 点击进入单人会话页面
     ele4 = ("id", "com.didichuxing.internalapp:id/btn_emoticon")
     self.click(ele4)  # 点击表情icon
-
-
