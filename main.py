@@ -30,21 +30,37 @@ def test_stiker(data):  # 发送各个模块的表情包
     One_use(driver).send_expression(ele)
 
 
-def test_IdCard():
+@allure.step("1.进入单聊\n2.点击+号\n3.点击名片选择用户发送名片。")
+@allure.title('单聊')
+@allure.description("发送名片")
+def test_IdCard(chat_more_button):
     try:
         print("发送名片中...\n")
         One_use(driver).send_IdCard()
     except Exception as i:
-        print("发送名片失败，请检查！", i)
+        raise ("发送失败请检查下\n", i)
 
 
+@allure.step("1.进入单聊\n2.长按发送语音消息")
+@allure.title("单聊")
+@allure.description('发送语音')
+@pytest.mark.skip(reason="语音目前运用是坐标定位，不适配所有机型，暂时跳过，后期想用其他办法")
 def test_VoiceMessage():
     try:
         print("发送语音中...\n")
         One_use(driver).send_VoiceMessage()
     except Exception as i:
-        print("发送失败请检查下\n", i)
+        raise ("发送失败请检查下\n", i)
 
 
-if __name__ == '__main__':
-    pytest.main()
+@allure.step("1.进入单聊\n2.通过图片预览区发送语音消息")
+@allure.title("单聊")
+@allure.description('通过图片预览区发送图片')
+@pytest.mark.parametrize("data", Excel().getAllcase())
+def test_preview_picture(chat_more_button, data):  # 通过预览区发送图片
+    try:
+        print(data['name'])
+        value = (data['type'], data['value'])
+        One_use(driver).send_preview_picture(value)
+    except Exception as i:
+        raise ("发送失败请检查下\n", i)

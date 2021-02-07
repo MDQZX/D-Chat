@@ -28,8 +28,6 @@ class One_use(Fulei):
         self.Long_press(ele=ele2, x=640, y=2374, time=2000)  # 长按 发送语音  X:x轴  Y：Y轴
 
     def send_IdCard(self):
-        ele = ('id', 'com.didichuxing.internalapp:id/btn_function')  # 点击更多"+"号
-        self.click(ele)
         ele2 = ('xpath', '//android.widget.ImageView[@content-desc="名片"]')  # 点击名片
         self.click(ele2)
         ele3 = ('xpath',
@@ -37,3 +35,12 @@ class One_use(Fulei):
         self.click(ele3)  # 在最近联系人中选择第一位
         ele4 = ('id', "com.didichuxing.internalapp:id/item_confirm")
         self.click(ele4)  # 点击确定发送
+
+    def send_preview_picture(self, value):  # 通过图片预览器发图片
+        ele = ('id', 'com.didichuxing.internalapp:id/photo_iv')
+        self.click(ele)
+        self.click(value)
+
+    def send_document(self):  # 发送一个协同文档
+        ele = ('xpath', '//android.widget.ImageView[@content-desc="云文档"]')
+        self.click(ele)
